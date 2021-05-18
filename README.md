@@ -24,11 +24,11 @@ schemas
 
 2. validate the format of schema files are correct.
 ```
-igluctl lint schemas/<prefix1>.<prefix2>.<prefix3>/<sub_path>/jsonschema/*
+$ igluctl lint schemas/<prefix1>.<prefix2>.<prefix3>/<sub_path>/jsonschema/*
 ```
 3. upload schema file to GCS
 ```
-gsutil cp schemas/<prefix1>.<prefix2>.<prefix3>/<sub_path>/jsonschema/1-0-0 gs://<YOUR_GCS_BUCKET>/schemas/<prefix1>.<prefix2>.<prefix3>/<sub_path>/jsonschema/1-0-0
+$ gsutil cp schemas/<prefix1>.<prefix2>.<prefix3>/<sub_path>/jsonschema/1-0-0 gs://<YOUR_GCS_BUCKET>/schemas/<prefix1>.<prefix2>.<prefix3>/<sub_path>/jsonschema/1-0-0
 ```
 
 ## reference
