@@ -1,0 +1,21 @@
+{
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "description": "Schema for 7-11 user context",
+    "self": {
+      "vendor": "com.cloudmile.711",
+      "name": "user_context",
+      "format": "jsonschema",
+      "version": "1-0-0"
+    },
+  
+    "type": "object",
+    "properties": {
+      "pseudo_id": {
+        "type": ["string", "null"],
+        "maxLength": 100,
+        "description": "custom 7-11 pseudo_id"
+      }
+    },
+    "minProperties": 1,
+    "additionalProperties": true
+}
