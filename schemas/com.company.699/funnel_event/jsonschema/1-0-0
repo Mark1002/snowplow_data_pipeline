@@ -1,8 +1,8 @@
 {
     "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
-    "description": "Schema for a 7-11 funnel event",
+    "description": "Schema for a demo funnel event",
     "self": {
-      "vendor": "com.cloudmile.711",
+      "vendor": "com.company.699",
       "name": "funnel_event",
       "format": "jsonschema",
       "version": "1-0-0"
@@ -13,17 +13,17 @@
       "event": {
         "type": ["string", "null"],
         "maxLength": 50,
-        "description": "custom 7-11 event name"
+        "description": "custom event name"
       },
       "referal_app_name": {
         "type": ["string", "null"],
         "maxLength": 50,
-        "description": "custom 7-11 event field"
+        "description": "custom event field"
       },
       "funnel_type": {
         "type": ["string", "null"],
         "maxLength": 50,
-        "description": "custom 7-11 event field"
+        "description": "custom event field"
       }
     },
     "minProperties": 1,
