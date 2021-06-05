@@ -4,7 +4,24 @@
 todo
 
 ## deploy step
-todo
+### 1. config setting
+change environment varible in `gcloud-config-mustr.sh` to your gcp project and save new file to `gcloud-config.sh`.
+
+### 2. set up relate GCP services
+execute `gcloud-init-project.sh` to set up relate gcp services.
+```
+$ ./gcloud-init-project.sh
+```
+### 3. start & stop dataflow ETL piepline
+
+start pipeline:
+```
+$ ./start_etl.sh
+```
+stop pipeline:
+```
+$ ./stop_etl.sh
+```
 
 ## custom schema example
 1. create the schema dictionary structure and schema file like below:
