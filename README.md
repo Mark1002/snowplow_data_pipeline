@@ -32,4 +32,4 @@ $ gsutil cp schemas/<prefix1>.<prefix2>.<prefix3>/<sub_path>/jsonschema/1-0-0 gs
 ```
 
 ## reference
-todo
+1. https://github.com/etnetera-activate/snowplow-gcp-template

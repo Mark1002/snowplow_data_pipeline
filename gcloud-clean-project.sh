@@ -35,11 +35,11 @@ else
 fi
 
 # clean instance group
-if [[ $(gcloud compute instance-groups managed list --filter snowplow-collector711-group) != "" ]] ; then
-    echo "[info] delete snowplow-collector711-group"
-    gcloud compute instance-groups managed delete snowplow-collector711-group -q --region ${REGION}
+if [[ $(gcloud compute instance-groups managed list --filter snowplow-collector-group) != "" ]] ; then
+    echo "[info] delete snowplow-collector-group"
+    gcloud compute instance-groups managed delete snowplow-collector-group -q --region ${REGION}
 else
-    echo "[info] instance group snowplow-collector711-group not exist!"
+    echo "[info] instance group snowplow-collector-group not exist!"
 fi
 
 # clean instance template

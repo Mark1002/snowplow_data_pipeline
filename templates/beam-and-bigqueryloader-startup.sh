@@ -49,13 +49,13 @@ gsutil cp  ${TEMP_BUCKET}/config/bigqueryloader_config.json .
 
 # add table column
 ./snowplow-bigquery-mutator-$bq_version/bin/snowplow-bigquery-mutator add-column \
-    --schema iglu:com.cloudmile.711/funnel_event/jsonschema/1-0-0 \
+    --schema iglu:com.company.699/funnel_event/jsonschema/1-0-0 \
     --shred-property CONTEXTS \
     --config $(cat bigqueryloader_config.json | base64 -w 0) \
     --resolver $(cat iglu_config.json | base64 -w 0)
 
 ./snowplow-bigquery-mutator-$bq_version/bin/snowplow-bigquery-mutator add-column \
-    --schema iglu:com.cloudmile.711/user_context/jsonschema/1-0-0 \
+    --schema iglu:com.company.699/user_context/jsonschema/1-0-0 \
     --shred-property CONTEXTS \
     --config $(cat bigqueryloader_config.json | base64 -w 0) \
     --resolver $(cat iglu_config.json | base64 -w 0)

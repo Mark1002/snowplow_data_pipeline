@@ -23,12 +23,12 @@
                 }
             },
             {
-                "name": "cloudmile 711 static repo",
+                "name": "demo static repo",
                 "priority": 2,
-                "vendorPrefixes": ["com.cloudmile.711"],
+                "vendorPrefixes": ["com.company.699"],
                 "connection": {
                     "http": {
-                        "uri": "http://storage.googleapis.com/711-snowplow-iglu-gvscmt8d74"
+                        "uri": "http://storage.googleapis.com/snowplow-iglu-gvscmt8d74"
                     }
                 }
             }

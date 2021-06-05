@@ -121,23 +121,23 @@ else
 fi
 
 echo "[info] Preparing compute instance group"
-if [[ $(gcloud compute instance-groups managed list --filter snowplow-collector711-group) == "" ]] ; then
-    gcloud beta compute instance-groups managed create snowplow-collector711-group \
-        --base-instance-name=snowplow-collector711-group \
+if [[ $(gcloud compute instance-groups managed list --filter snowplow-collector-group) == "" ]] ; then
+    gcloud beta compute instance-groups managed create snowplow-collector-group \
+        --base-instance-name=snowplow-collector-group \
         --template=snowplow-collector-template --size=1 \
         --health-check=snowplow-collector-health-check \
         --initial-delay=300 --region "${REGION}"
 
     echo "[info] Seting autoscaling for group"
-    gcloud compute instance-groups managed set-autoscaling "snowplow-collector711-group" \
+    gcloud compute instance-groups managed set-autoscaling "snowplow-collector-group" \
         --cool-down-period "60" --max-num-replicas "2" --region "${REGION}" \
         --min-num-replicas "1" --target-cpu-utilization "0.6"
 
     echo "[info] Setting named-ports"
-    gcloud compute instance-groups managed set-named-ports snowplow-collector711-group \
+    gcloud compute instance-groups managed set-named-ports snowplow-collector-group \
         --region "${REGION}" --named-ports http:8080
 else
-    echo "[info] instance group snowplow-collector711-group aleady exist!"
+    echo "[info] instance group snowplow-collector-group aleady exist!"
 fi
 
 echo "[info] Prepare creating load balancer"
@@ -156,7 +156,7 @@ if [[ $(gcloud compute backend-services list --filter snowplow-backend) == "" ]]
         --health-checks=snowplow-collector-health-check \
         --protocol HTTP --port-name http --timeout 30 --global
     gcloud compute backend-services add-backend snowplow-backend \
-        --instance-group snowplow-collector711-group \
+        --instance-group snowplow-collector-group \
         --balancing-mode UTILIZATION \
         --max-utilization 0.8 \
         --capacity-scaler 1.0 \
